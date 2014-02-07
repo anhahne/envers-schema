@@ -18,11 +18,6 @@
       <artifactId>reflections</artifactId>
       <version>0.9.9-RC1</version>
     </dependency>
-    <!-- <dependency> -->
-    <!-- <groupId>de.dtv.volleyball</groupId> -->
-    <!-- <artifactId>persistence</artifactId> -->
-    <!-- <version>1.0.0-SNAPSHOT</version> -->
-    <!-- </dependency> -->
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
@@ -35,34 +30,14 @@
       <scope>provided</scope>
     </dependency>
     <dependency>
-      <groupId>org.codehaus.plexus</groupId>
-      <artifactId>plexus-utils</artifactId>
-      <version>3.0.1</version>
-    </dependency>
-    <dependency>
       <groupId>org.apache.maven</groupId>
       <artifactId>maven-plugin-api</artifactId>
       <version>2.2.1</version>
     </dependency>
     <dependency>
-        <groupId>org.apache.maven</groupId>
-        <artifactId>maven-artifact</artifactId>
-        <version>2.2.1</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.maven</groupId>
-        <artifactId>maven-project</artifactId>
-        <version>2.2.1</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.maven</groupId>
-        <artifactId>maven-model</artifactId>
-        <version>2.2.1</version>
-    </dependency>
-    <dependency>
-        <groupId>org.apache.maven</groupId>
-        <artifactId>maven-core</artifactId>
-        <version>2.0.9</version>
+      <groupId>org.apache.maven</groupId>
+      <artifactId>maven-settings</artifactId>
+      <version>2.2.1</version>
     </dependency>
   </dependencies>
 
@@ -84,7 +59,6 @@
         <artifactId>maven-plugin-plugin</artifactId>
         <version>3.2</version>
         <configuration>
-          <!-- see http://jira.codehaus.org/browse/MNG-5346 -->
           <skipErrorNoDescriptorsFound>true</skipErrorNoDescriptorsFound>
         </configuration>
         <executions>
@@ -95,18 +69,19 @@
             </goals>
           </execution>
           <!-- if you want to generate help goal -->
-          <!-- <execution> -->
-          <!-- <id>help-goal</id> -->
-          <!-- <goals> -->
-          <!-- <goal>helpmojo</goal> -->
-          <!-- </goals> -->
-          <!-- </execution> -->
+          <execution>
+            <id>help-goal</id>
+            <goals>
+              <goal>helpmojo</goal>
+            </goals>
+          </execution>
         </executions>
       </plugin>
     </plugins>
     <pluginManagement>
       <plugins>
-        <!--This plugin's configuration is used to store Eclipse m2e settings only. It has no influence on the Maven build itself.-->
+        <!--This plugin's configuration is used to store Eclipse m2e settings 
+          only. It has no influence on the Maven build itself. -->
         <plugin>
           <groupId>org.eclipse.m2e</groupId>
           <artifactId>lifecycle-mapping</artifactId>
