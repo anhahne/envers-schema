@@ -1,3 +1,4 @@
+package de.exalta.envers.maven;
 import java.util.Collection;
 
 import javax.persistence.Entity;

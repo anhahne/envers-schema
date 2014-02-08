@@ -1,3 +1,5 @@
+package de.exalta.envers.maven;
+
 import java.io.File;
 import java.net.MalformedURLException;
 import java.net.URL;
