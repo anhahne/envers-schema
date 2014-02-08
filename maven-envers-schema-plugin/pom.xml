@@ -3,15 +3,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>de.exalta</groupId>
 	<artifactId>envers-schema-maven-plugin</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>Hibernate Envers Schema Generator Plugin</name>
+	<description>Analyses the JPA entities in a specified package and generates DDL statements for schema generation. Besides the Entity annotation, this plugin processes the Hibernate Envers annotation Audited and generates AUD tables accordingly.</description>
 	<packaging>maven-plugin</packaging>
+	<prerequisites>
+		<maven>2.2.1</maven>
+	</prerequisites>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-envers</artifactId>
-			<version>4.2.7.Final</version>
+			<version>4.3.1.Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.reflections</groupId>
@@ -27,12 +31,12 @@
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-plugin-api</artifactId>
-			<version>2.2.1</version>
+			<version>3.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.apache.maven</groupId>
 			<artifactId>maven-settings</artifactId>
-			<version>2.2.1</version>
+			<version>3.1.1</version>
 		</dependency>
 	</dependencies>
 

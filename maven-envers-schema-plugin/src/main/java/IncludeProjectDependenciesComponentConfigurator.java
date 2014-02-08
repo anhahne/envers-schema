@@ -4,7 +4,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.codehaus.classworlds.ClassRealm;
+import org.codehaus.plexus.classworlds.realm.ClassRealm;
 import org.codehaus.plexus.component.configurator.AbstractComponentConfigurator;
 import org.codehaus.plexus.component.configurator.ComponentConfigurationException;
 import org.codehaus.plexus.component.configurator.ConfigurationListener;
@@ -30,16 +30,16 @@ import org.codehaus.plexus.configuration.PlexusConfiguration;
  */
 public class IncludeProjectDependenciesComponentConfigurator extends AbstractComponentConfigurator {
   @Override
-  public void configureComponent(Object component, PlexusConfiguration configuration, ExpressionEvaluator expressionEvaluator,
-      ClassRealm containerRealm, ConfigurationListener listener) throws ComponentConfigurationException {
+  public void configureComponent(Object component, PlexusConfiguration configuration, ExpressionEvaluator evaluator,
+ ClassRealm realm,
+      ConfigurationListener listener) throws ComponentConfigurationException {
+    addProjectDependenciesToClassRealm(evaluator, realm);
 
-    addProjectDependenciesToClassRealm(expressionEvaluator, containerRealm);
-
-    this.converterLookup.registerConverter(new ClassRealmConverter(containerRealm));
+    this.converterLookup.registerConverter(new ClassRealmConverter(realm));
 
     ObjectWithFieldsConverter converter = new ObjectWithFieldsConverter();
 
-    converter.processConfiguration(this.converterLookup, component, containerRealm.getClassLoader(), configuration, expressionEvaluator, listener);
+    converter.processConfiguration(this.converterLookup, component, realm.getParent(), configuration, evaluator, listener);
   }
 
   @SuppressWarnings("unchecked")
@@ -56,7 +56,7 @@ public class IncludeProjectDependenciesComponentConfigurator extends AbstractCom
     // Add the project dependencies to the ClassRealm
     final URL[] urls = buildURLs(runtimeClasspathElements);
     for (URL url : urls) {
-      containerRealm.addConstituent(url);
+      containerRealm.addURL(url);
     }
   }
 

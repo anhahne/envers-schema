@@ -9,7 +9,7 @@ import org.apache.maven.plugins.annotations.Parameter;
 import org.apache.maven.plugins.annotations.ResolutionScope;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.envers.Audited;
-import org.hibernate.tool.EnversSchemaGenerator;
+import org.hibernate.envers.tools.hbm2ddl.EnversSchemaGenerator;
 import org.hibernate.tool.hbm2ddl.SchemaExport;
 import org.reflections.Reflections;
 
