@@ -52,7 +52,8 @@ public class SchemaGenerator extends AbstractMojo {
     }
 
     SchemaExport export = new EnversSchemaGenerator(this.config).export();
-    export.setOutputFile(this.destination).execute(true, false, false, false);
+    export.setDelimiter(";");
+    export.setOutputFile(this.destination).execute(true, false, false, true);
 
     getLog().info("Generated schema saved in " + this.destination);
   }
