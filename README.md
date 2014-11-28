@@ -1,6 +1,6 @@
 envers-schema
 =============
-<img src="https://travis-ci.org/anhahne/envers-schema.svg?branch=master" alt="Travis CI Status" />
+[![Build Status](https://travis-ci.org/anhahne/envers-schema.svg?branch=master)](https://travis-ci.org/anhahne/envers-schema)
 
 Analyses the JPA entities in a specified package and generates DDL statements for schema generation. Besides the Entity
 annotation, this plugin processes the Hibernate Envers annotation Audited and generates AUD tables accordingly.
