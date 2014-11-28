@@ -1,0 +1,55 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>de.exalta</groupId>
+  <artifactId>envers-schema</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0</version>
+  
+  <name>Hibernate Envers Schema Generator Plugin</name>
+  <description>Analyses the JPA entities in a specified package and generates DDL statements for schema generation. Besides the Entity annotation, this plugin processes the Hibernate Envers annotation Audited and generates AUD tables accordingly.</description>
+  <inceptionYear>2014</inceptionYear>
+  <prerequisites>
+    <maven>2.2.1</maven>
+  </prerequisites>
+
+  <modules>
+    <module>maven-envers-schema-plugin</module>
+  </modules>
+
+  <developers>
+    <developer>
+      <name>Andreas Hahne</name>
+      <email>anhahne@aol.com</email>
+    </developer>
+  </developers>
+
+  <scm>
+    <url>https://github.com/anhahne/envers-schema</url>
+    <connection>scm:git:git@github.com:anhahne/envers-schema.git</connection>
+    <tag>v1.0.0</tag>
+  </scm>
+
+  <url>https://github.com/anhahne/envers-schema</url>
+  <licenses>
+    <license>
+      <name>Apache License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+      <distribution>manual</distribution>
+    </license>
+  </licenses>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.7</source>
+          <target>1.7</target>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>
