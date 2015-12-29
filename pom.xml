@@ -4,7 +4,7 @@
   <groupId>de.exalta</groupId>
   <artifactId>envers-schema</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
 
   <name>${project.groupId}:${project.artifactId}</name>
   <description>Analyses the JPA entities in a specified package and generates DDL statements for schema generation. Besides the Entity annotation, this plugin processes the Hibernate Envers annotation Audited and generates AUD tables accordingly.</description>
@@ -32,7 +32,7 @@
   <scm>
     <url>https://github.com/anhahne/envers-schema</url>
     <connection>scm:git:git@github.com:anhahne/envers-schema.git</connection>
-    <tag>v1.0.0</tag>
+    <tag>v1.0.2</tag>
   </scm>
 
   <url>https://github.com/anhahne/envers-schema</url>
