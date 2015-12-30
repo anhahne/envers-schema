@@ -25,3 +25,4 @@ Basically, the plugin provides three properties:
 Version History
 ---------------
 1.0.0    2014-02-08    First release with all features described above.
+1.0.2    2015-12-30    Upgraded version of Plexus Plugin
