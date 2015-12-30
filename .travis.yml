@@ -1,3 +1,4 @@
+install: true
 script: "mvn install -Dgpg.skip=true"
 
 language: java
